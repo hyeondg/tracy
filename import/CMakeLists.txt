@@ -27,4 +27,9 @@ add_executable(tracy-import-fuchsia
 )
 target_link_libraries(tracy-import-fuchsia PRIVATE TracyServer)
 
+add_executable(tracy-import-miniprofiler
+    src/import-miniprofiler.cpp
+)
+target_link_libraries(tracy-import-miniprofiler PRIVATE TracyServer nlohmann_json::nlohmann_json)
+
 set_property(DIRECTORY ${CMAKE_CURRENT_LIST_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
